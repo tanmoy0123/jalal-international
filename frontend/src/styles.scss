@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+$nav-color: #198754;
+
+body {
+  zoom: 0.9; // scales everything to 90%
+}
+
+// nav-bar
+.nav-link {
+  position: relative;
+  color: $nav-color !important;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 3px;
+    background-color: $nav-color;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after,
+  &.active::after {
+    width: 100%;
+  }
+
+  &.active {
+    color: $nav-color !important;
+    font-weight: 700;
+  }
+}

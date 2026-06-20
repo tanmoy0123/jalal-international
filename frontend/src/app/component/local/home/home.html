@@ -1,0 +1,304 @@
+<!-- Hero Slider -->
+<app-hero></app-hero>
+
+<!-- Marquee -->
+<section>
+  <div class="container">
+    <p class="marquee">
+      <marquee class="marq" direction="left" loop="">
+        Al Mojeel International is a leading international recruiting agency that specializes in
+        exporting Bangladeshi manpower worldwide.
+      </marquee>
+    </p>
+  </div>
+</section>
+
+<!-- About us -->
+<section class="about-company">
+  <div class="container main-content">
+    <!-- Left Content -->
+    <div class="about-content">
+      <h2>ABOUT AL-MOJEEL INT.</h2>
+
+      <p>
+        <strong>M/S Al Mojeel International</strong> established in 1998 is a trusted name in the
+        field of Manpower exporter organization in Bangladesh. Since its establishment,
+        <strong>M/S Al Mojeel International</strong> has maintained a leadership position through
+        the hard work put in by its management. Now, we are one of the few professionally managed
+        recruiting agencies in Bangladesh, approved by Government and holding Recruiting License
+        No-612 to recruit and mobilize all categories of manpower from Bangladesh to overseas
+        markets.
+        <a href="#">see more</a>
+      </p>
+
+      <a href="#" class="profile-btn">
+        <span class="icon-circle">
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+        COMPANY PROFILE
+      </a>
+    </div>
+
+    <!-- Right Content -->
+    <div class="director-section">
+      <div class="director-info">
+        <p class="quote">We believe in quality service with our dedicated professionals</p>
+
+        <h4>Md. Belal Hossain</h4>
+        <span>Managing Director</span>
+      </div>
+
+      <div class="director-image">
+        <img
+          src="https://img.magnific.com/premium-psd/professional-portrait-young-man-business-attire_990507-47451.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="Managing Director"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statistics section -->
+<section class="stats-section">
+  <div class="container stat-main">
+    <div class="stat-item">
+      <div class="stat-icon">
+        <i class="fa-solid fa-clipboard-check"></i>
+      </div>
+      <div class="stat-content">
+        <h2>1000+</h2>
+        <p>Projects Done</p>
+      </div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-icon">
+        <i class="fa-solid fa-earth-asia"></i>
+      </div>
+      <div class="stat-content">
+        <h2>250+</h2>
+        <p>Clients Worldwide</p>
+      </div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-icon">
+        <i class="fa-solid fa-users"></i>
+      </div>
+      <div class="stat-content">
+        <h2>80000+</h2>
+        <p>Recruitment</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Client Sections Carousel -->
+<section class="clients-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>OUR CLIENTS</h2>
+    </div>
+
+    <div class="clients-slider">
+      <div class="clients-track">
+        <!-- Original set -->
+        @for (client of clients; track client.id) {
+          <div class="client-item">
+            <div class="client-card">
+              <img [src]="client.logo" [alt]="client.name" />
+            </div>
+          </div>
+        }
+
+        <!-- Duplicate set for seamless loop -->
+        @for (client of clients; track 'copy-' + client.id) {
+          <div class="client-item">
+            <div class="client-card">
+              <img [src]="client.logo" [alt]="client.name" />
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Group Of Partner -->
+<section class="group-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="sub-title">OUR GROUP</span>
+      <h2>WE ARE <span>AL-MOJEEL</span> GROUP</h2>
+      <p class="description">
+        A diversified business conglomerate with a strong presence across multiple sectors
+      </p>
+    </div>
+
+    <!-- Group Companies Grid -->
+    <div class="group-grid">
+      @for (company of groupCompanies; track company.id) {
+        <div class="group-card" [ngClass]="company.size">
+          <div class="card-icon">
+            <i [class]="company.icon"></i>
+          </div>
+          <div class="card-content">
+            <h3>{{ company.name }}</h3>
+            <span class="category">{{ company.category }}</span>
+            <p class="description-text">{{ company.description }}</p>
+          </div>
+          <div class="card-overlay">
+            <span class="learn-more">Learn More →</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- CTA Button -->
+    <div class="text-center mt-5">
+      <button class="btn-explore">
+        Explore All Companies
+        <i class="fas fa-arrow-right ms-2"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Gurantee section -->
+<section class="guarantee-section">
+  <div class="container">
+    <div class="guarantee-wrapper">
+      <!-- Left Content -->
+      <div class="guarantee-content">
+        <div class="section-badge">
+          <i class="fas fa-shield-alt"></i>
+          GUARANTEED SERVICE
+        </div>
+
+        <h2 class="guarantee-title">
+          We're <span>Committed</span> to Your<br />
+          Recruitment <span>Success</span>
+        </h2>
+
+        <p class="guarantee-description">
+          We are committed to meeting the unique recruitment needs of our clients, no matter the
+          industry or position level. With our expertise and extensive network of job seekers, we
+          are able to provide the best recruitment solutions that help our clients meet their
+          staffing needs efficiently and effectively.
+        </p>
+
+        <!-- Guarantee Features -->
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="feature-text">
+              <h4>100% Guarantee</h4>
+              <p>Complete satisfaction guaranteed or your money back</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="feature-text">
+              <h4>Expert Network</h4>
+              <p>Access to top-tier talent across all industries</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="feature-text">
+              <h4>Quick Turnaround</h4>
+              <p>Efficient staffing solutions delivered on time</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <div class="feature-text">
+              <h4>Trusted Partner</h4>
+              <p>Building lasting relationships with our clients</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="cta-group">
+          <button class="btn-primary">
+            Get Started
+            <i class="fas fa-arrow-right ms-2"></i>
+          </button>
+          <button class="btn-secondary">
+            <i class="fas fa-play-circle me-2"></i>
+            Watch Video
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Visual -->
+      <div class="guarantee-visual">
+        <div class="visual-wrapper">
+          <!-- Main Image Placeholder -->
+          <div class="main-image">
+            <div class="image-content">
+              <i class="fas fa-briefcase"></i>
+              <span>Recruitment</span>
+              <span class="sub-text">Solutions</span>
+            </div>
+          </div>
+
+          <!-- Floating Elements -->
+          <div class="floating-card card-1">
+            <div class="card-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="card-info">
+              <span class="number">100%</span>
+              <span class="label">Guarantee</span>
+            </div>
+          </div>
+
+          <div class="floating-card card-2">
+            <div class="card-icon">
+              <i class="fas fa-user-check"></i>
+            </div>
+            <div class="card-info">
+              <span class="number">500+</span>
+              <span class="label">Placements</span>
+            </div>
+          </div>
+
+          <div class="floating-card card-3">
+            <div class="card-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="card-info">
+              <span class="number">4.9</span>
+              <span class="label">Rating</span>
+            </div>
+          </div>
+
+          <!-- Decorative Elements -->
+          <div class="circle-decoration"></div>
+          <div class="dots-decoration">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

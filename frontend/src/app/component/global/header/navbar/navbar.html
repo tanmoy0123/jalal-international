@@ -1,0 +1,13 @@
+<ul class="navbar-nav gap-4 fw-semibold">
+  @for (link of navLinks; track link.path) {
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="link.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: link.exact }"
+        >{{ link.label }}</a
+      >
+    </li>
+  }
+</ul>

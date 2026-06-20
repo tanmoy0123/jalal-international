@@ -1,0 +1,46 @@
+<section class="hero-slider" [ngClass]="getCurrentAnimation()">
+  <div class="hero-slider__track">
+    @for (slide of slides; track slide.id; let i = $index) {
+      <div
+        class="hero-slide"
+        [ngClass]="this.getSlideState(i)"
+        [style.backgroundImage]="'url(' + slide.image + ')'"
+      >
+        <div class="hero-slide__overlay"></div>
+        <div class="container">
+          @if (!slide.description) {
+            <div
+              class="hero-slide__card"
+              [ngStyle]="{
+                'margin-left': (i + 1) % 2 == 0 ? '0' : 'auto',
+                'margin-right': (i + 1) % 2 == 0 ? '0' : '',
+              }"
+            >
+              @if (slide.subtitle) {
+                <span class="hero-slide__subtitle">{{ slide.subtitle }}</span>
+              }
+              @if (slide.title) {
+                <h2 class="hero-slide__title">{{ slide.title }}</h2>
+              }
+              @if (slide.items?.length) {
+                <ul class="hero-slide__list">
+                  @for (item of slide.items; track item) {
+                    <li>{{ item }}</li>
+                  }
+                </ul>
+              }
+            </div>
+          }
+          @if (slide.description) {
+            <div class="hero-slide__desc-card">
+              <p class="hero-slide__desc">{{ slide.description }}</p>
+              @if (slide.showButton) {
+                <button class="hero-slide__btn">See More</button>
+              }
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>

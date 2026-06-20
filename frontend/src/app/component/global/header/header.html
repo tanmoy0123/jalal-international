@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg bg-white px-5" [style.height]="'12vh'">
+  <div class="container">
+    <!-- Logo Component -->
+    <div>
+      <a class="navbar-brand d-flex align-items-center" routerLink="/">
+        <img src="/assets/images/al_mojeel_int_logo.png" alt="Logo" height="60" />
+      </a>
+    </div>
+
+    <!-- Toggle button for mobile -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links Component -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <app-navbar></app-navbar>
+    </div>
+  </div>
+</nav>
