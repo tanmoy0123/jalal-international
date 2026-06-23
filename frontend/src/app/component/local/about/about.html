@@ -1,1 +1,46 @@
-<p>about works!</p>
+<section class="hero" role="banner" aria-label="Page banner">
+  <div class="hero__overlay">
+    <div class="container">
+      <h1 class="hero__title">ABOUT US</h1>
+    </div>
+  </div>
+</section>
+
+<nav class="breadcrumb" aria-label="Breadcrumb navigation">
+  <div class="container">
+    <ol class="breadcrumb__list">
+      @for (item of breadcrumbs; track item.label; let last = $last) {
+        <li class="breadcrumb__item" [class.breadcrumb__item--active]="last">
+          @if (item.link && !last) {
+            <a [href]="item.link" class="breadcrumb__link">{{ item.label }}</a>
+          } @else {
+            <span>{{ item.label }}</span>
+          }
+          @if (!last) {
+            <span class="breadcrumb__sep" aria-hidden="true">&gt;</span>
+          }
+        </li>
+      }
+    </ol>
+  </div>
+</nav>
+
+<main class="page-body">
+  <div class="container">
+    <section class="content-section" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="section-heading">ABOUT AL-MOJEEL INT.</h2>
+
+      @for (para of aboutParagraphs; track $index) {
+        <p class="body-text" [innerHTML]="highlight(para)"></p>
+      }
+    </section>
+
+    <section class="content-section" aria-labelledby="history-heading">
+      <h2 id="history-heading" class="section-heading">OUR HISTORY</h2>
+
+      @for (para of historyParagraphs; track $index) {
+        <p class="body-text" [innerHTML]="highlight(para)"></p>
+      }
+    </section>
+  </div>
+</main>

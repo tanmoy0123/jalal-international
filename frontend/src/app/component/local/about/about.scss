@@ -1,0 +1,228 @@
+$clr-green: #2f8d46;
+$clr-green-dark: #23702f;
+$clr-green-muted: #3aaa57;
+
+$clr-white: #ffffff;
+$clr-body-text: #484848;
+$clr-muted-text: #666666;
+$clr-border: #e2e2e2;
+$clr-bg-crumb: #f7f7f7;
+
+$hero-overlay: rgba(0, 0, 0, 0.54);
+
+$font-stack: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$type-scale-hero: clamp(1.6rem, 4vw, 2.4rem);
+$type-scale-h2: clamp(1.15rem, 2.4vw, 1.5rem);
+$type-scale-body: clamp(0.86rem, 1.4vw, 0.935rem);
+$line-height-body: 1.82;
+
+$container-max: 1180px;
+$content-max: 1111px;
+$gutter: 24px;
+$gutter-sm: 16px;
+
+$space-xs: 8px;
+$space-sm: 16px;
+$space-md: 28px;
+$space-lg: 48px;
+$space-xl: 72px;
+
+$bp-md: 768px;
+$bp-sm: 480px;
+
+@mixin respond-below($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid $clr-green;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+:host {
+  display: block;
+  font-family: $font-stack;
+  color: $clr-body-text;
+  background: $clr-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+
+  background: {
+    image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=75&auto=format');
+    size: cover;
+    position: center 35%;
+    repeat: no-repeat;
+    color: #1a2f1e;
+  }
+
+  @include respond-below($bp-md) {
+    height: 190px;
+  }
+
+  @include respond-below($bp-sm) {
+    height: 155px;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: $hero-overlay;
+    display: flex;
+    align-items: center;
+  }
+
+  &__inner {
+    padding-inline-start: 10%;
+
+    @include respond-below($bp-md) {
+      padding-inline-start: $gutter-sm;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    color: $clr-white;
+    line-height: 1.1;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.breadcrumb {
+  margin-top: 1rem;
+  .container {
+    padding-block: 9px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 2px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: $clr-muted-text;
+
+    &--active span {
+      color: $clr-body-text;
+    }
+  }
+
+  &__link {
+    color: $clr-green;
+    text-decoration: none;
+    transition: color 0.18s ease;
+
+    @include focus-ring;
+
+    &:hover {
+      color: $clr-green-dark;
+      text-decoration: underline;
+    }
+  }
+
+  &__sep {
+    color: $clr-muted-text;
+    font-size: 0.75rem;
+    line-height: 1;
+    user-select: none;
+  }
+}
+
+.page-body {
+  padding-block: $space-lg $space-xl;
+
+  @include respond-below($bp-md) {
+    padding-block: $space-md $space-lg;
+  }
+}
+
+.content-section {
+  max-width: $content-max;
+  margin-block-end: $space-lg;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+
+  @include respond-below($bp-md) {
+    max-width: 100%;
+  }
+}
+
+.section-heading {
+  margin: 0 0 $space-md;
+  font-size: 36px;
+  font-weight: 700;
+  color: $clr-green;
+  text-transform: uppercase;
+  line-height: 1.15;
+
+  @include respond-below($bp-sm) {
+    margin-block-end: $space-sm;
+  }
+}
+
+.body-text {
+  margin: 0 0 $space-sm;
+  font-size: 1.1rem;
+  line-height: $line-height-body;
+  color: $clr-body-text;
+  text-align: justify;
+  hyphens: auto;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+
+  ::ng-deep mark.brand {
+    background: none;
+    color: $clr-green;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  @include respond-below($bp-md) {
+    text-align: left;
+    hyphens: none;
+    font-size: 0.9rem;
+    line-height: 1.74;
+  }
+}
+
+*:focus-visible {
+  outline: 2px solid $clr-green;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
