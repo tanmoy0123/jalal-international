@@ -1,1 +1,74 @@
-<p>services works!</p>
+<!-- services.component.html -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="hero-content container">
+    <h1 class="hero-title">Our Services</h1>
+    <p class="hero-subtitle">
+      Comprehensive recruitment & manpower solutions tailored to your needs.
+    </p>
+  </div>
+</section>
+
+<section class="introduction-section">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <span class="breadcrumb-item">Home</span>
+    <span class="breadcrumb-separator">/</span>
+    <span class="breadcrumb-item active">Our Services</span>
+  </nav>
+
+  <div class="intro-content">
+    <h2>Delivering Excellence in Workforce Solutions</h2>
+    <p>
+      Al-Mojeel International connects businesses with top talent across industries. From
+      recruitment and training to logistics and religious tourism, we provide end-to-end services
+      that drive success.
+    </p>
+  </div>
+</section>
+
+<section class="services-grid-section container">
+  <div class="services-grid">
+    <div class="service-card" *ngFor="let service of services">
+      <div class="card-image">
+        <img [src]="service.image" [alt]="service.title" loading="lazy" />
+        <div class="card-icon">
+          <i [class]="service.icon"></i>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.shortDescription }}</p>
+        <a href="#" class="read-more">Read More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-choose-section">
+  <div class="container">
+    <h2 class="section-title">Why Choose Us</h2>
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <div class="feature-icon">
+          <i [class]="feature.icon"></i>
+        </div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-overlay"></div>
+  <div class="cta-content container">
+    <h2>Looking for Reliable Workforce Solutions?</h2>
+    <p>
+      Let's discuss how Al-Mojeel International can support your recruitment and manpower needs.
+    </p>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-primary">Contact Us</a>
+      <a href="#" class="btn btn-secondary">Get Consultation</a>
+    </div>
+  </div>
+</section>
