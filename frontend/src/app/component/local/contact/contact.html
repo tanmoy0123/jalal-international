@@ -1,1 +1,307 @@
-<p>contact works!</p>
+<!-- ─── Hero Section ──────────────────────────────────────────────────────── -->
+<section class="hero-section d-flex align-items-center">
+  <div class="hero-overlay"></div>
+  <div class="container position-relative hero-content">
+    <span class="hero-badge">
+      <i class="fas fa-phone-alt me-2"></i>
+      Get in Touch
+    </span>
+    <h1 class="hero-title">Contact <span>Us</span></h1>
+    <p class="hero-subtitle">
+      Thank you for your interest in Al Mojeel International. If you have any questions or
+      inquiries, please feel free to reach out to us.
+    </p>
+  </div>
+</section>
+
+<!-- ─── Contact Section ───────────────────────────────────────────────────── -->
+<section class="contact-section">
+  <div class="container">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb contact-breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Al-Mojeel International</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+      </ol>
+    </nav>
+
+    <div class="row g-4">
+      <!-- ─── Contact Form ────────────────────────────────────────────────── -->
+      <div class="col-lg-7">
+        <div class="contact-form-wrapper">
+          <div class="section-header text-start">
+            <span class="sub-title">SEND A MESSAGE</span>
+            <h2>Get In <span>Touch</span></h2>
+            <p class="description">
+              Fill out the form below and one of our representatives will get in touch with you
+              shortly.
+            </p>
+          </div>
+
+          <form (ngSubmit)="submitForm()" #contactForm="ngForm" class="contact-form">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="name" class="form-label">
+                    <i class="fas fa-user me-2"></i>
+                    Name <span class="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    class="form-control"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="email" class="form-label">
+                    <i class="fas fa-envelope me-2"></i>
+                    E-mail <span class="text-danger">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="Enter your email address"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="phone" class="form-label">
+                    <i class="fas fa-phone me-2"></i>
+                    Phone number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    class="form-control"
+                    placeholder="Enter your phone number"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="subject" class="form-label">
+                    <i class="fas fa-tag me-2"></i>
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    class="form-control"
+                    placeholder="Enter message subject"
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="message" class="form-label">
+                    <i class="fas fa-comment me-2"></i>
+                    Message <span class="text-danger">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    class="form-control"
+                    rows="5"
+                    placeholder="Write your message here..."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input type="checkbox" id="newsletter" class="form-check-input" />
+                  <label for="newsletter" class="form-check-label">
+                    <i class="fas fa-newspaper me-2"></i>
+                    Subscribe to our newsletter
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn-submit" [disabled]="isSubmitting()">
+                  @if (isSubmitting()) {
+                    <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                    Sending...
+                  } @else if (isSuccess()) {
+                    <i class="fas fa-check-circle me-2"></i>
+                    Message Sent!
+                  } @else {
+                    <i class="fas fa-paper-plane me-2"></i>
+                    Submit
+                  }
+                </button>
+
+                @if (isSuccess()) {
+                  <div class="success-message">
+                    <i class="fas fa-check-circle"></i>
+                    Thank you for your message! We'll get back to you shortly.
+                  </div>
+                }
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ─── Contact Info ────────────────────────────────────────────────── -->
+      <div class="col-lg-5">
+        <div class="contact-info-wrapper">
+          <div class="section-header text-start">
+            <span class="sub-title">CONTACT INFORMATION</span>
+            <h2>Office <span>Locations</span></h2>
+            <p class="description">
+              Our team is always ready to assist you with your recruitment needs or answer any
+              questions you may have about our services.
+            </p>
+          </div>
+
+          <!-- International Offices -->
+          <div class="office-group">
+            <h4 class="office-group-title">
+              <i class="fas fa-globe-americas me-2"></i>
+              International Office
+            </h4>
+
+            @for (office of offices; track office.name) {
+              @if (office.type === 'international') {
+                <div class="office-card">
+                  <div class="office-icon">
+                    <i [class]="'fas ' + office.icon"></i>
+                  </div>
+                  <div class="office-details">
+                    <h5 class="office-name">
+                      {{ office.name }}
+                      @if (office.isMain) {
+                        <span class="main-badge">Main</span>
+                      }
+                    </h5>
+                    <p class="office-address">
+                      <i class="fas fa-map-marker-alt"></i>
+                      {{ office.address }}
+                    </p>
+                    <p class="office-phone">
+                      <i class="fas fa-phone"></i>
+                      {{ office.phone }}
+                    </p>
+                    <p class="office-email">
+                      <i class="fas fa-envelope"></i>
+                      <a href="mailto:{{ office.email }}">{{ office.email }}</a>
+                    </p>
+                  </div>
+                </div>
+              }
+            }
+          </div>
+
+          <!-- Bangladesh Offices -->
+          <div class="office-group">
+            <h4 class="office-group-title">
+              <i class="fas fa-map-pin me-2"></i>
+              Bangladesh Office
+            </h4>
+
+            @for (office of offices; track office.name) {
+              @if (office.type === 'bangladesh') {
+                <div class="office-card" [class.office-card--main]="office.isMain">
+                  <div class="office-icon">
+                    <i [class]="'fas ' + office.icon"></i>
+                  </div>
+                  <div class="office-details">
+                    <h5 class="office-name">
+                      {{ office.name }}
+                      @if (office.isMain) {
+                        <span class="main-badge">Main</span>
+                      }
+                    </h5>
+                    <p class="office-address">
+                      <i class="fas fa-map-marker-alt"></i>
+                      {{ office.address }}
+                    </p>
+                    <p class="office-phone">
+                      <i class="fas fa-phone"></i>
+                      {{ office.phone }}
+                    </p>
+                    <p class="office-email">
+                      <i class="fas fa-envelope"></i>
+                      <a href="mailto:{{ office.email }}">{{ office.email }}</a>
+                    </p>
+                  </div>
+                </div>
+              }
+            }
+          </div>
+
+          <!-- Quick Contact -->
+          <div class="quick-contact">
+            <div class="quick-contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <span>Email Us</span>
+                <a href="mailto:{{ contactInfo.email }}">{{ contactInfo.email }}</a>
+              </div>
+            </div>
+            <div class="quick-contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <span>Call Us</span>
+                <a href="tel:{{ contactInfo.phone }}">{{ contactInfo.phone }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Map Section ────────────────────────────────────────────────────────── -->
+<section class="map-section">
+  <div class="container">
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902!2d90.409!3d23.729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9b3e3c5c5c5%3A0x0!2zMjPCsDQzJzQ0LjQiTiA5MMKwMjQnMzIuNCJF!5e0!3m2!1sen!2sbd!4v1234567890"
+        width="100%"
+        height="400"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Al Mojeel International Office Location Map"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA Section ────────────────────────────────────────────────────────── -->
+<section class="cta-section d-flex align-items-center">
+  <div class="cta-overlay"></div>
+  <div class="container position-relative cta-content text-center">
+    <div class="section-badge">
+      <i class="fas fa-handshake"></i>
+      WORK WITH US
+    </div>
+    <h2 class="cta-title">Ready to Find Your <span>Next Talent?</span></h2>
+    <p class="cta-subtitle">
+      Partner with Al-Mojeel International and gain access to a verified, skilled, and motivated
+      talent pool — deployed efficiently and reliably across Saudi Arabia.
+    </p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary-cta"> Get in Touch <i class="fas fa-arrow-right ms-2"></i> </a>
+      <a href="#" class="btn-secondary-cta">
+        <i class="fas fa-phone-alt me-2"></i>
+        Request a Consultation
+      </a>
+    </div>
+  </div>
+</section>

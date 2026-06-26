@@ -1,74 +1,118 @@
-<!-- services.component.html -->
-<section class="hero-section">
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center">
   <div class="hero-overlay"></div>
-  <div class="hero-content container">
+  <div class="container position-relative hero-content">
+    <span class="hero-badge">What We Offer</span>
     <h1 class="hero-title">Our Services</h1>
     <p class="hero-subtitle">
-      Comprehensive recruitment & manpower solutions tailored to your needs.
+      Comprehensive recruitment &amp; manpower solutions tailored to your needs.
     </p>
   </div>
 </section>
 
-<section class="introduction-section">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <span class="breadcrumb-item">Home</span>
-    <span class="breadcrumb-separator">/</span>
-    <span class="breadcrumb-item active">Our Services</span>
-  </nav>
-
-  <div class="intro-content">
-    <h2>Delivering Excellence in Workforce Solutions</h2>
-    <p>
-      Al-Mojeel International connects businesses with top talent across industries. From
-      recruitment and training to logistics and religious tourism, we provide end-to-end services
-      that drive success.
-    </p>
-  </div>
-</section>
-
-<section class="services-grid-section container">
-  <div class="services-grid">
-    <div class="service-card" *ngFor="let service of services">
-      <div class="card-image">
-        <img [src]="service.image" [alt]="service.title" loading="lazy" />
-        <div class="card-icon">
-          <i [class]="service.icon"></i>
-        </div>
-      </div>
-      <div class="card-body">
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.shortDescription }}</p>
-        <a href="#" class="read-more">Read More →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="why-choose-section">
+<!-- Services Section -->
+<section class="services-section">
   <div class="container">
-    <h2 class="section-title">Why Choose Us</h2>
-    <div class="features-grid">
-      <div class="feature-card" *ngFor="let feature of features">
-        <div class="feature-icon">
-          <i [class]="feature.icon"></i>
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb services-breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Our Services</li>
+      </ol>
+    </nav>
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="sub-title">WHAT WE DO</span>
+      <h2>Delivering <span>Excellence</span> in Workforce Solutions</h2>
+      <p class="description">
+        Jalal Overseas International connects businesses with top talent across industries. From
+        recruitment and training to logistics and religious tourism, we provide end-to-end services
+        that drive success.
+      </p>
+    </div>
+
+    <!-- Service Cards Grid -->
+    <div class="row g-4">
+      @for (service of services; track service.title) {
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="card-image">
+              <img [src]="service.image" [alt]="service.title" loading="lazy" />
+              <div class="card-image-overlay"></div>
+              <div class="card-icon-badge">
+                <i [class]="service.icon"></i>
+              </div>
+            </div>
+            <div class="card-body-content">
+              <h5 class="card-title">{{ service.title }}</h5>
+              <p class="card-text">{{ service.shortDescription }}</p>
+              <a href="#" class="read-more">
+                Read More
+                <i class="fas fa-arrow-right ms-2"></i>
+              </a>
+            </div>
+            <div class="card-overlay">
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </div>
         </div>
-        <h3>{{ feature.title }}</h3>
-        <p>{{ feature.description }}</p>
-      </div>
+      }
     </div>
   </div>
 </section>
 
-<section class="cta-section">
+<!-- Why Choose Us Section -->
+<section class="features-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="sub-title">OUR STRENGTHS</span>
+      <h2>Why Choose <span>Jalal Overseas</span></h2>
+      <p class="description">
+        Decades of experience, a global network, and an unwavering commitment to quality make us the
+        trusted partner for workforce solutions.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      @for (feature of features; track feature.title) {
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i [class]="feature.icon"></i>
+            </div>
+            <h5 class="feature-title">{{ feature.title }}</h5>
+            <p class="feature-desc">{{ feature.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section d-flex align-items-center">
   <div class="cta-overlay"></div>
-  <div class="cta-content container">
-    <h2>Looking for Reliable Workforce Solutions?</h2>
-    <p>
-      Let's discuss how Al-Mojeel International can support your recruitment and manpower needs.
+  <div class="container position-relative cta-content text-center">
+    <div class="section-badge">
+      <i class="fas fa-handshake"></i>
+      GET IN TOUCH
+    </div>
+    <h2 class="cta-title">Looking for Reliable <span>Workforce</span> Solutions?</h2>
+    <p class="cta-subtitle">
+      Let's discuss how Jalal Overseas International can support your recruitment and manpower
+      needs.
     </p>
     <div class="cta-buttons">
-      <a href="#" class="btn btn-primary">Contact Us</a>
-      <a href="#" class="btn btn-secondary">Get Consultation</a>
+      <a href="#" class="btn-primary-cta">
+        Contact Us
+        <i class="fas fa-arrow-right ms-2"></i>
+      </a>
+      <a href="#" class="btn-secondary-cta">
+        <i class="fas fa-phone-alt me-2"></i>
+        Get Consultation
+      </a>
     </div>
   </div>
 </section>

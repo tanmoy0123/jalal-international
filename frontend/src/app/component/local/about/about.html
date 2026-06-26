@@ -1,46 +1,185 @@
-<section class="hero" role="banner" aria-label="Page banner">
-  <div class="hero__overlay">
-    <div class="container">
-      <h1 class="hero__title">ABOUT US</h1>
+<!-- ─── Hero Section ──────────────────────────────────────────────────────── -->
+<section class="hero-section d-flex align-items-center">
+  <div class="hero-overlay"></div>
+  <div class="container position-relative hero-content">
+    <span class="hero-badge">Who We Are</span>
+    <h1 class="hero-title">About Us</h1>
+    <p class="hero-subtitle">
+      A leading Bangladeshi international recruitment agency connecting skilled professionals with
+      opportunities across the Kingdom of Saudi Arabia since 1998.
+    </p>
+  </div>
+</section>
+
+<!-- ─── About Section ─────────────────────────────────────────────────────── -->
+<section class="about-section">
+  <div class="container">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb about-breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Jalal Overseas International</a></li>
+        <li class="breadcrumb-item active" aria-current="page">About Us</li>
+      </ol>
+    </nav>
+
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="sub-title">OUR STORY</span>
+      <h2>Bridging Talent with <span>Opportunity</span></h2>
+      <p class="description">
+        Since 1998, Jalal Overseas International has been the trusted bridge between skilled
+        Bangladeshi professionals and leading employers in the Kingdom of Saudi Arabia — building
+        careers and businesses, one placement at a time.
+      </p>
+    </div>
+
+    <!-- About Content: Text + Stats -->
+    <div class="row g-5 align-items-center">
+      <!-- Left: Prose -->
+      <div class="col-lg-7">
+        <div class="about-prose">
+          <p class="about-lead">
+            Jalal Overseas International is a
+            <mark class="brand">leading international recruiting agency</mark>
+            specializing in connecting Bangladeshi manpower with employers in the
+            <mark class="brand">Kingdom of Saudi Arabia</mark>.
+          </p>
+          <p class="about-body">
+            With decades of experience, we have successfully placed thousands of skilled
+            professionals across construction, healthcare, hospitality, engineering, and more. Our
+            team of experienced recruiters works closely with both clients and candidates to ensure
+            a seamless, transparent, and successful recruitment journey.
+          </p>
+          <p class="about-body">
+            Our rigorous screening process — combining extensive interviews, background checks, and
+            skills verification — ensures only the most qualified candidates reach your
+            organization. We don't just fill positions; we build long-term workforce partnerships
+            that drive real business results.
+          </p>
+          <p class="about-body">
+            We are a proud member of the
+            <mark class="brand"
+              >Bangladesh Association of International Recruiting Agencies (BAIRA)</mark
+            >, the apex trade body for recruiting agencies in Bangladesh, giving our clients and
+            candidates access to a verified, regulated, and internationally trusted recruitment
+            framework.
+          </p>
+          <a href="#" class="btn-about-primary mt-3">
+            Our Services <i class="fas fa-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Stats Grid -->
+      <div class="col-lg-5">
+        <div class="stats-grid">
+          @for (stat of stats; track stat.label) {
+            <div class="stat-card">
+              <div class="stat-icon-wrap">
+                <i [class]="stat.icon"></i>
+              </div>
+              <div class="stat-value">{{ stat.value }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+            </div>
+          }
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<nav class="breadcrumb" aria-label="Breadcrumb navigation">
+<!-- ─── Core Values Section (mirrors Features Section exactly) ────────────── -->
+<section class="values-section">
   <div class="container">
-    <ol class="breadcrumb__list">
-      @for (item of breadcrumbs; track item.label; let last = $last) {
-        <li class="breadcrumb__item" [class.breadcrumb__item--active]="last">
-          @if (item.link && !last) {
-            <a [href]="item.link" class="breadcrumb__link">{{ item.label }}</a>
-          } @else {
-            <span>{{ item.label }}</span>
-          }
-          @if (!last) {
-            <span class="breadcrumb__sep" aria-hidden="true">&gt;</span>
-          }
-        </li>
-      }
-    </ol>
-  </div>
-</nav>
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="sub-title">WHAT WE STAND FOR</span>
+      <h2>Our Core <span>Values</span></h2>
+      <p class="description">
+        Every placement, every partnership, and every interaction is guided by the principles that
+        have made us a trusted name in international recruitment for over 25 years.
+      </p>
+    </div>
 
-<main class="page-body">
+    <!-- Value Cards (same as feature-card grid) -->
+    <div class="row g-4">
+      @for (value of coreValues; track value.title) {
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <i [class]="value.icon"></i>
+            </div>
+            <h5 class="feature-title">{{ value.title }}</h5>
+            <p class="feature-desc">{{ value.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ─── History Section (mirrors Services Section with timeline cards) ─────── -->
+<section class="history-section">
   <div class="container">
-    <section class="content-section" aria-labelledby="about-heading">
-      <h2 id="about-heading" class="section-heading">ABOUT AL-MOJEEL INT.</h2>
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="sub-title">OUR JOURNEY</span>
+      <h2>25 Years of <span>Excellence</span></h2>
+      <p class="description">
+        From a single-sector startup in Dhaka to one of Bangladesh's most recognized international
+        recruitment agencies — our history is a story of growth, trust, and thousands of lives
+        transformed.
+      </p>
+    </div>
 
-      @for (para of aboutParagraphs; track $index) {
-        <p class="body-text" [innerHTML]="highlight(para)"></p>
+    <!-- Timeline Cards Grid (same grid as service-card) -->
+    <div class="row g-4">
+      @for (milestone of milestones; track milestone.year) {
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card milestone-card">
+            <div class="card-image">
+              <div class="milestone-image-bg">
+                <span class="milestone-year-display">{{ milestone.year }}</span>
+              </div>
+              <div class="card-image-overlay"></div>
+              <div class="card-icon-badge">
+                <i [class]="milestone.icon"></i>
+              </div>
+            </div>
+            <div class="card-body-content">
+              <span class="milestone-year-tag">{{ milestone.year }}</span>
+              <h5 class="card-title">{{ milestone.title }}</h5>
+              <p class="card-text">{{ milestone.description }}</p>
+            </div>
+            <div class="card-overlay">
+              <span class="learn-more">Our Story →</span>
+            </div>
+          </div>
+        </div>
       }
-    </section>
-
-    <section class="content-section" aria-labelledby="history-heading">
-      <h2 id="history-heading" class="section-heading">OUR HISTORY</h2>
-
-      @for (para of historyParagraphs; track $index) {
-        <p class="body-text" [innerHTML]="highlight(para)"></p>
-      }
-    </section>
+    </div>
   </div>
-</main>
+</section>
+
+<!-- ─── CTA Section ────────────────────────────────────────────────────────── -->
+<section class="cta-section d-flex align-items-center">
+  <div class="cta-overlay"></div>
+  <div class="container position-relative cta-content text-center">
+    <div class="section-badge">
+      <i class="fas fa-users"></i>
+      WORK WITH US
+    </div>
+    <h2 class="cta-title">Ready to Find Your <span>Ideal Workforce</span>?</h2>
+    <p class="cta-subtitle">
+      Partner with Jalal Overseas International and gain access to a verified, skilled, and
+      motivated talent pool — deployed efficiently and reliably.
+    </p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary-cta"> Contact Us <i class="fas fa-arrow-right ms-2"></i> </a>
+      <a href="#" class="btn-secondary-cta">
+        <i class="fas fa-phone-alt me-2"></i>
+        Get a Free Consultation
+      </a>
+    </div>
+  </div>
+</section>

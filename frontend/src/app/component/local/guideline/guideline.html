@@ -1,0 +1,174 @@
+<!-- ─── Recruitment Process Hero ─────────────────────────────────────────── -->
+<section class="process-hero">
+  <div class="process-overlay"></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <span class="hero-badge">
+          <i class="fas fa-user-tie me-2"></i>
+          Recruitment & Selection
+        </span>
+        <h1 class="hero-title">Recruitment & <br /><span>Selection Process</span></h1>
+        <p class="hero-description">
+          A comprehensive, transparent, and efficient recruitment process designed to deliver the
+          best talent for your organization.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Process Tabs ──────────────────────────────────────────────────────── -->
+<section class="process-tabs-section">
+  <div class="container">
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb process-breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Jalal Overseas International</a></li>
+        <li class="breadcrumb-item"><a href="/services">Services</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Recruitment & Selection Process</li>
+      </ol>
+    </nav>
+
+    <div class="tabs-wrapper">
+      <button
+        class="tab-btn"
+        [class.tab-btn--active]="activeTab() === 'recruitment'"
+        (click)="setTab('recruitment')"
+      >
+        <i class="fas fa-arrow-right me-2"></i>
+        Recruitment Process
+      </button>
+      <button
+        class="tab-btn"
+        [class.tab-btn--active]="activeTab() === 'selection'"
+        (click)="setTab('selection')"
+      >
+        <i class="fas fa-check-circle me-2"></i>
+        Selection Process
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Recruitment Process ──────────────────────────────────────────────── -->
+@if (activeTab() === 'recruitment') {
+  <section class="process-steps-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-title">STEP BY STEP</span>
+        <h2>Recruitment <span>Process</span></h2>
+        <p class="description">
+          Our systematic recruitment approach ensures we find the right talent for your
+          organization's unique needs.
+        </p>
+      </div>
+
+      <div class="timeline">
+        @for (step of recruitmentSteps; track step.number) {
+          <div class="timeline-item">
+            <div class="timeline-icon">
+              <span class="step-number">{{ step.number }}</span>
+              <i [class]="'fas ' + step.icon"></i>
+            </div>
+            <div class="timeline-content">
+              <h3 class="step-title">{{ step.title }}</h3>
+              <p class="step-description">{{ step.description }}</p>
+            </div>
+            @if (step.number < recruitmentSteps.length) {
+              <div class="timeline-connector"></div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}
+
+<!-- ─── Selection Process ────────────────────────────────────────────────── -->
+@if (activeTab() === 'selection') {
+  <section class="process-steps-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-title">STEP BY STEP</span>
+        <h2>Selection <span>Process</span></h2>
+        <p class="description">
+          Our rigorous selection process ensures only the most qualified candidates are presented to
+          our clients.
+        </p>
+      </div>
+
+      <div class="selection-grid">
+        @for (step of selectionSteps; track step.number) {
+          <div class="selection-card">
+            <div class="selection-card-header">
+              <span class="step-badge">Step {{ step.number }}</span>
+              <div class="step-icon-wrapper">
+                <i [class]="'fas ' + step.icon"></i>
+              </div>
+            </div>
+            <div class="selection-card-body">
+              <h4 class="selection-title">{{ step.title }}</h4>
+              <p class="selection-description">{{ step.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- ─── Guarantee Section ────────────────────────────────────────────── -->
+      <div class="guarantee-section">
+        <div class="guarantee-header">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Our Guarantee & Additional Services</h3>
+        </div>
+        <div class="guarantee-grid">
+          @for (point of guaranteePoints; track point) {
+            <div class="guarantee-item">
+              <i class="fas fa-check-circle"></i>
+              <span>{{ point }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+}
+
+<!-- ─── Features Highlight ───────────────────────────────────────────────── -->
+<section class="features-section">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <h4>Video Conferencing</h4>
+          <p>
+            Advanced video conferencing facilities for clients who cannot physically interview
+            candidates.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-medal"></i>
+          </div>
+          <h4>Full Candidate Guarantee</h4>
+          <p>Full guarantee on selected candidates backed by our rigorous selection procedure.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h4>Timely Deployment</h4>
+          <p>
+            Fast and efficient deployment with booking and travel arrangements handled seamlessly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

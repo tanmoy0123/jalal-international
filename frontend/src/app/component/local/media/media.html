@@ -1,0 +1,147 @@
+<!-- ─── Hero Section ──────────────────────────────────────────────────────── -->
+<section class="hero-section d-flex align-items-center">
+  <div class="hero-overlay"></div>
+  <div class="container position-relative hero-content">
+    <span class="hero-badge">
+      <i class="fas fa-images me-2"></i>
+      Our Gallery
+    </span>
+    <h1 class="hero-title">Al-Mojeel <span>Gallery</span></h1>
+    <p class="hero-subtitle">
+      Explore our journey through images — from recruitment drives and training sessions to
+      corporate events and client collaborations.
+    </p>
+  </div>
+</section>
+
+<!-- ─── Gallery Section ───────────────────────────────────────────────────── -->
+<section class="gallery-section">
+  <div class="container">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb gallery-breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Jalal Overseas International</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+      </ol>
+    </nav>
+
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="sub-title">CAPTURING MOMENTS</span>
+      <h2>Our <span>Gallery</span></h2>
+      <p class="description">
+        A visual journey through our recruitment processes, training programs, corporate events, and
+        client partnerships across Saudi Arabia and beyond.
+      </p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+      @for (cat of categories; track cat) {
+        <button
+          class="filter-btn"
+          [class.filter-btn--active]="activeFilter() === cat"
+          (click)="setFilter(cat)"
+        >
+          {{ cat }}
+        </button>
+      }
+    </div>
+
+    <!-- Image Grid -->
+    <div class="gallery-grid">
+      @for (image of paginatedImages(); track image.id) {
+        <div class="gallery-card">
+          <div class="image-wrapper">
+            <img [src]="image.thumbnail" [alt]="image.title" loading="lazy" class="gallery-image" />
+            <div class="image-overlay">
+              <div class="overlay-content">
+                <i class="fas fa-expand"></i>
+                <span class="image-title">{{ image.title }}</span>
+                <span class="image-category">{{ image.category }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="image-info">
+            <span class="image-id">#{{ image.id }}</span>
+            <span class="image-category-tag">{{ image.category }}</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Empty State -->
+    @if (paginatedImages().length === 0) {
+      <div class="empty-state">
+        <i class="fas fa-images"></i>
+        <h4>No images found</h4>
+        <p>Try selecting a different category</p>
+      </div>
+    }
+
+    <!-- Pagination -->
+    @if (filteredImages().length > 0) {
+      <div class="pagination-wrapper">
+        <div class="pagination-info">
+          <span>
+            Showing <strong>{{ startIndex() }}</strong> – <strong>{{ endIndex() }}</strong> of
+            <strong>{{ filteredImages().length }}</strong> images
+          </span>
+        </div>
+
+        <nav aria-label="Gallery pagination">
+          <ul class="pagination">
+            <li class="page-item" [class.disabled]="currentPage() === 1">
+              <button class="page-link" (click)="prevPage()" aria-label="Previous">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+            </li>
+
+            @for (page of getPageNumbers(); track $index) {
+              @if (page === -1) {
+                <li class="page-item disabled">
+                  <span class="page-link">…</span>
+                </li>
+              } @else {
+                <li class="page-item" [class.active]="currentPage() === page">
+                  <button class="page-link" (click)="setPage(page)">
+                    {{ page }}
+                  </button>
+                </li>
+              }
+            }
+
+            <li class="page-item" [class.disabled]="currentPage() === totalPages()">
+              <button class="page-link" (click)="nextPage()" aria-label="Next">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ─── CTA Section ────────────────────────────────────────────────────────── -->
+<section class="cta-section d-flex align-items-center">
+  <div class="cta-overlay"></div>
+  <div class="container position-relative cta-content text-center">
+    <div class="section-badge">
+      <i class="fas fa-handshake"></i>
+      WORK WITH US
+    </div>
+    <h2 class="cta-title">Ready to Be Part of Our <span>Next Chapter?</span></h2>
+    <p class="cta-subtitle">
+      Partner with Al-Mojeel International and become part of our growing success story. Let's
+      create memorable moments together.
+    </p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary-cta"> Get in Touch <i class="fas fa-arrow-right ms-2"></i> </a>
+      <a href="#" class="btn-secondary-cta">
+        <i class="fas fa-phone-alt me-2"></i>
+        Request a Consultation
+      </a>
+    </div>
+  </div>
+</section>
