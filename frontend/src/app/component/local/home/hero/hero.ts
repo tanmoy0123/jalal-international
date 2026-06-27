@@ -77,7 +77,7 @@ export class Hero implements OnInit, OnDestroy {
       image: 'assets/images/hero/image-3.jpeg',
       title: '',
       description:
-        'Al Mojeel International is a leading international recruiting agency that specializes in exporting Bangladeshi manpower worldwide.',
+        'Jalal Overseas International is a leading international recruiting agency that specializes in exporting Bangladeshi manpower worldwide.',
       showButton: true,
       color: 'blue',
       animation: 'zoom',

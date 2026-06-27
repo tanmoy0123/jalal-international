@@ -46,7 +46,7 @@ export class Home {
   groupCompanies = [
     {
       id: 1,
-      name: 'AL MOJEEL SUPERMARKET',
+      name: 'JALAL SUPERMARKET',
       category: 'Retail',
       description: 'Leading supermarket chain offering quality products at competitive prices.',
       icon: 'fas fa-store',
@@ -109,7 +109,7 @@ export class Home {
     },
     {
       id: 8,
-      name: 'MOJEEL AIR INTERNATIONAL',
+      name: 'JALAL AIR INTERNATIONAL',
       category: 'Aviation',
       description: 'International air services and aviation solutions.',
       icon: 'fas fa-plane',

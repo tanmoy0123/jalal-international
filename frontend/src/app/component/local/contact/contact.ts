@@ -27,7 +27,7 @@ export class Contact {
       type: 'international',
       address: 'Al Hammam commercial centre, 2nd Floor, Room No-10, Al Badiya, Dammam',
       phone: '+966 54 567 6804',
-      email: 'almojeel612@gmail.com',
+      email: 'jalalint612@gmail.com',
       icon: 'fa-building',
     },
     {
@@ -35,7 +35,7 @@ export class Contact {
       type: 'international',
       address: 'Al Murabba, Jabor Bin Rashid Road, Riyadh',
       phone: '+966 55 025 0225',
-      email: 'almojeel612@gmail.com',
+      email: 'jalalint612@gmail.com',
       icon: 'fa-city',
     },
     {
@@ -43,7 +43,7 @@ export class Contact {
       type: 'bangladesh',
       address: '2/C, Shawon Tower (11th floor), Purana Paltan, Dhaka, Bangladesh',
       phone: '+880 1753 020101',
-      email: 'almojeel612@gmail.com',
+      email: 'jalalint612@gmail.com',
       icon: 'fa-flag',
       isMain: true,
     },
@@ -52,13 +52,13 @@ export class Contact {
       type: 'bangladesh',
       address: 'House: 99, Road: 13, Block: D, Banani, Dhaka-1213',
       phone: '+880 1753 020101',
-      email: 'almojeel612@gmail.com',
+      email: 'jalalint612@gmail.com',
       icon: 'fa-briefcase',
     },
   ];
 
   readonly contactInfo = {
-    email: 'almojeel612@gmail.com',
+    email: 'jalalint612@gmail.com',
     phone: '+880 1753 020101',
   };
 
