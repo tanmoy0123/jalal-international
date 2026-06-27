@@ -1,0 +1,50 @@
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+
+  .navbar-logo {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .company-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0b3c5d;
+    letter-spacing: 0.5px;
+  }
+
+  .company-tagline {
+    font-size: 0.75rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    gap: 8px;
+
+    .navbar-logo {
+      height: 60px;
+    }
+
+    .company-name {
+      font-size: 1.2rem;
+    }
+
+    .company-tagline {
+      font-size: 0.65rem;
+    }
+  }
+}
