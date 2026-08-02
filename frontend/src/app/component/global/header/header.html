@@ -1,18 +1,9 @@
-<nav class="navbar navbar-expand-lg bg-white px-5" [style.height]="'12vh'">
+<nav class="navbar navbar-expand-lg custom-navbar px-5">
   <div class="container">
-    <!-- Logo Component -->
-    <div>
-      <a class="navbar-brand" routerLink="/">
-        <img src="/assets/images/logo.png" alt="Jalal Overseas Logo" class="navbar-logo" />
+    <a class="navbar-brand" href="/">
+      <img src="/assets/images/logo.png" alt="Jalal Overseas Logo" class="navbar-logo" />
+    </a>
 
-        <div class="brand-text">
-          <span class="company-name">Jalal Overseas International</span>
-          <span class="company-tagline">Your Trusted Recruitment Partner</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- Toggle button for mobile -->
     <button
       class="navbar-toggler"
       type="button"
@@ -25,9 +16,14 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navbar Links Component -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <app-navbar></app-navbar>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="mx-auto">
+        <app-navbar></app-navbar>
+      </div>
+
+      <div class="d-flex mt-3 mt-lg-0 align-items-center">
+        <a href="/contact" class="btn btn-contact px-4 py-2 fw-bold">Contact Us</a>
+      </div>
     </div>
   </div>
 </nav>

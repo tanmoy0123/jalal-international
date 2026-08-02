@@ -87,7 +87,6 @@ export class Hero implements OnInit, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    console.log('Slider initialized with interval:', this.interval);
     this.startAutoplay();
   }
 

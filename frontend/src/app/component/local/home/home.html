@@ -1,24 +1,40 @@
-<!-- Hero Slider -->
-<app-hero></app-hero>
-
 <!-- Marquee -->
-<section>
-  <div class="container">
-    <p class="marquee">
-      <marquee class="marq" direction="left" loop="">
-        Jalal Overseas International is a leading international recruiting agency that specializes
-        in exporting Bangladeshi manpower worldwide.
-      </marquee>
-    </p>
+<section class="news-ticker">
+  <div class="container h-100">
+    <div class="ticker-wrapper h-100">
+      <!-- Highlight Badge -->
+      <div class="ticker-badge"><i class="bi bi-megaphone-fill"></i> Highlight</div>
+
+      <!-- Scrolling Content -->
+      <div class="ticker-content">
+        <div class="ticker-track">
+          <!-- Text 1 -->
+          <span>
+            Jalal Overseas International is a premier government-authorized recruiting agency based
+            in Bangladesh, dedicated to supplying skilled, semi-skilled, and unskilled manpower to
+            international markets.
+          </span>
+          <!-- Text 2 (Duplicated for seamless infinite loop) -->
+          <span>
+            Jalal Overseas International is a premier government-authorized recruiting agency based
+            in Bangladesh, dedicated to supplying skilled, semi-skilled, and unskilled manpower to
+            international markets.
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- Hero Slider -->
+<app-hero></app-hero>
 
 <!-- About us -->
 <section class="about-company">
   <div class="container main-content">
     <!-- Left Content -->
     <div class="about-content">
-      <h2>ABOUT Jalal Overseas INT.</h2>
+      <h2>About <span>Jalal Overseas Int.</span></h2>
 
       <p>
         <strong>M/S Jalal Overseas International</strong> established in 1998 is a trusted name in
@@ -28,13 +44,13 @@
         managed recruiting agencies in Bangladesh, approved by Government and holding Recruiting
         License No-612 to recruit and mobilize all categories of manpower from Bangladesh to
         overseas markets.
-        <a href="#">see more</a>
+        <a href="#" class="read-more">see more</a>
       </p>
 
       <a href="#" class="profile-btn">
         Company Profile
         <span class="icon-circle">
-          <i class="fa-solid fa-arrow-right"></i>
+          <i class="bi bi-arrow-right"></i>
         </span>
       </a>
     </div>
@@ -42,17 +58,23 @@
     <!-- Right Content -->
     <div class="director-section">
       <div class="director-info">
-        <p class="quote">We believe in quality service with our dedicated professionals</p>
+        <i class="bi bi-quote quote-icon"></i>
+        <p class="quote">We believe in quality service with our dedicated professionals.</p>
 
-        <h4>Md. Nur</h4>
-        <span>Managing Director</span>
+        <div class="author-details">
+          <h4>Md. Nur</h4>
+          <span>Managing Director</span>
+        </div>
       </div>
 
       <div class="director-image">
-        <img
-          src="https://img.magnific.com/premium-psd/professional-portrait-young-man-business-attire_990507-47451.jpg?semt=ais_hybrid&w=740&q=80"
-          alt="Managing Director"
-        />
+        <div class="image-wrapper">
+          <img
+            src="https://img.magnific.com/premium-psd/professional-portrait-young-man-business-attire_990507-47451.jpg?semt=ais_hybrid&w=740&q=80"
+            alt="Managing Director"
+          />
+          <div class="image-backdrop"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -93,83 +115,10 @@
   </div>
 </section>
 
-<!-- Client Sections Carousel -->
-<section class="clients-section">
-  <div class="container">
-    <div class="section-title">
-      <h2>OUR CLIENTS</h2>
-    </div>
-
-    <div class="clients-slider">
-      <div class="clients-track">
-        <!-- Original set -->
-        @for (client of clients; track client.id) {
-          <div class="client-item">
-            <div class="client-card">
-              <img [src]="client.logo" [alt]="client.name" />
-            </div>
-          </div>
-        }
-
-        <!-- Duplicate set for seamless loop -->
-        @for (client of clients; track 'copy-' + client.id) {
-          <div class="client-item">
-            <div class="client-card">
-              <img [src]="client.logo" [alt]="client.name" />
-            </div>
-          </div>
-        }
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Group Of Partner -->
-<section class="group-section">
-  <div class="container">
-    <!-- Section Header -->
-    <div class="section-header">
-      <span class="sub-title">OUR GROUP</span>
-      <h2>WE ARE <span>JALAL OVERSEAS INT.</span> GROUP</h2>
-      <p class="description">
-        A diversified business conglomerate with a strong presence across multiple sectors
-      </p>
-    </div>
-
-    <!-- Group Companies Grid -->
-    <div class="group-grid">
-      @for (company of groupCompanies; track company.id) {
-        <div class="group-card" [ngClass]="company.size">
-          <div class="card-icon">
-            <i [class]="company.icon"></i>
-          </div>
-          <div class="card-content">
-            <h3>{{ company.name }}</h3>
-            <span class="category">{{ company.category }}</span>
-            <p class="description-text">{{ company.description }}</p>
-          </div>
-          <div class="card-overlay">
-            <span class="learn-more">Learn More →</span>
-          </div>
-        </div>
-      }
-    </div>
-
-    <!-- CTA Button -->
-    <div class="text-center mt-5">
-      <button class="btn-explore">
-        Explore All Companies
-        <i class="fas fa-arrow-right ms-2"></i>
-      </button>
-    </div>
-  </div>
-</section>
-
 <!-- Gurantee section -->
 <section class="guarantee-section">
   <div class="container">
     <div class="guarantee-wrapper">
-      <!-- Left Content -->
       <div class="guarantee-content">
         <div class="section-badge">
           <i class="fas fa-shield-alt"></i>
@@ -188,7 +137,6 @@
           staffing needs efficiently and effectively.
         </p>
 
-        <!-- Guarantee Features -->
         <div class="feature-grid">
           <div class="feature-item">
             <div class="feature-icon">
@@ -231,7 +179,6 @@
           </div>
         </div>
 
-        <!-- CTA Buttons -->
         <div class="cta-group">
           <button class="btn-primary">
             Get Started
@@ -244,10 +191,8 @@
         </div>
       </div>
 
-      <!-- Right Visual -->
       <div class="guarantee-visual">
         <div class="visual-wrapper">
-          <!-- Main Image Placeholder -->
           <div class="main-image">
             <div class="image-content">
               <i class="fas fa-briefcase"></i>
@@ -256,7 +201,6 @@
             </div>
           </div>
 
-          <!-- Floating Elements -->
           <div class="floating-card card-1">
             <div class="card-icon">
               <i class="fas fa-check-circle"></i>
@@ -287,7 +231,6 @@
             </div>
           </div>
 
-          <!-- Decorative Elements -->
           <div class="circle-decoration"></div>
           <div class="dots-decoration">
             <span></span>
@@ -298,6 +241,73 @@
             <span></span>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Group Of Partner -->
+<section class="group-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="sub-title">Our Group</span>
+      <h2>We Are <span>Jalal Overseas Int.</span> Group</h2>
+      <p class="description">
+        A diversified business conglomerate with a strong presence across multiple sectors
+      </p>
+    </div>
+
+    <div class="group-grid">
+      @for (company of groupCompanies; track company.id) {
+        <div class="group-card" [ngClass]="company.size">
+          <div class="card-icon">
+            <i [class]="company.icon"></i>
+          </div>
+          <div class="card-content">
+            <h3>{{ company.name }}</h3>
+            <span class="category">{{ company.category }}</span>
+            <p class="description-text">{{ company.description }}</p>
+          </div>
+          <div class="card-overlay">
+            <span class="learn-more">Learn More &rarr;</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="text-center mt-5">
+      <button class="btn-explore">
+        Explore All Companies
+        <i class="fas fa-arrow-right ms-2"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Client Sections Carousel -->
+<section class="clients-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our <span>Clients</span></h2>
+    </div>
+
+    <div class="clients-slider">
+      <div class="clients-track">
+        @for (client of clients; track client.id) {
+          <div class="client-item">
+            <div class="client-card">
+              <img [src]="client.logo" [alt]="client.name" />
+            </div>
+          </div>
+        }
+
+        @for (client of clients; track 'copy-' + client.id) {
+          <div class="client-item">
+            <div class="client-card">
+              <img [src]="client.logo" [alt]="client.name" />
+            </div>
+          </div>
+        }
       </div>
     </div>
   </div>

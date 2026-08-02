@@ -7,10 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './footer.scss',
 })
 export class Footer {
-  subscribe(): void {
-    // Handle newsletter subscription logic
-    console.log('Newsletter subscription submitted!');
-    // Example: Call an API service to subscribe the user
-    // this.newsletterService.subscribe(email).subscribe(...);
+  ngOnIntit(): void {
+    console.log('Footer is always in log.');
   }
 }

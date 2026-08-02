@@ -9,13 +9,11 @@ import { RouterModule } from '@angular/router';
 })
 export class Navbar {
   navLinks = [
-  { label: 'Home', path: '/home', exact: true },
-  { label: 'About Us', path: '/about', exact: false },
-  { label: 'Services', path: '/services', exact: false },
-  { label: 'Clients', path: '/clients', exact: false },
-  { label: 'Guideline', path: '/guideline', exact: false },
-  { label: 'Media', path: '/media', exact: false },
-  { label: 'Contacts', path: '/contact', exact: false }
-];
-
+    { label: 'Home', path: '/home', exact: true },
+    { label: 'About Us', path: '/about', exact: false },
+    { label: 'Services', path: '/services', exact: false },
+    { label: 'Clients', path: '/clients', exact: false },
+    { label: 'Guideline', path: '/guideline', exact: false },
+    { label: 'Media', path: '/media', exact: false },
+  ];
 }
