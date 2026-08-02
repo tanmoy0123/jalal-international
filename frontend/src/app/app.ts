@@ -9,15 +9,6 @@ declare var AOS: any;
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App implements OnInit {
-  ngOnInit(): void {
-    this.aos();
-  }
+export class App {
   protected readonly title = signal('frontend');
-  private aos(): void {
-    AOS.init({
-      duration: 1000,
-      once: false,
-    });
-  }
 }
