@@ -1,5 +1,19 @@
+<!-- Custom Cursor Elements -->
+<div class="custom-cursor-dot" id="cursor-dot"></div>
+<div class="custom-cursor-outline" id="cursor-outline"></div>
+
 <app-header />
-<main >
-    <router-outlet />
+<main>
+  <router-outlet />
 </main>
 <app-footer />
+
+<button
+  class="scroll-to-top"
+  [class.show]="isShowScrollTopBtn"
+  (click)="scrollToTop()"
+  aria-label="Scroll to top"
+>
+  <i class="fa-solid fa-angle-up"></i>
+  <span>TOP</span>
+</button>
