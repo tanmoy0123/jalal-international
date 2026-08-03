@@ -1,10 +1,10 @@
 <!-- ─── Hero Section ──────────────────────────────────────────────────────── -->
 <section class="hero-section d-flex align-items-center">
   <div class="hero-overlay"></div>
-  <div class="container position-relative hero-content">
+  <div class="container position-relative hero-content text-center">
     <span class="hero-badge">Who We Are</span>
     <h1 class="hero-title">About Us</h1>
-    <p class="hero-subtitle">
+    <p class="hero-subtitle mx-auto">
       A leading Bangladeshi international recruitment agency connecting skilled professionals with
       opportunities across the Kingdom of Saudi Arabia since 1998.
     </p>
@@ -24,7 +24,7 @@
 
     <!-- Section Header -->
     <div class="section-header">
-      <span class="sub-title">OUR STORY</span>
+      <span class="sub-title">Our Story</span>
       <h2>Bridging Talent with <span>Opportunity</span></h2>
       <p class="description">
         Since 1998, Jalal Overseas International has been the trusted bridge between skilled
@@ -64,7 +64,7 @@
             candidates access to a verified, regulated, and internationally trusted recruitment
             framework.
           </p>
-          <a href="#" class="btn-about-primary mt-3">
+          <a href="#" class="btn-about-primary mt-4">
             Our Services <i class="fas fa-arrow-right ms-2"></i>
           </a>
         </div>
@@ -88,12 +88,11 @@
   </div>
 </section>
 
-<!-- ─── Core Values Section (mirrors Features Section exactly) ────────────── -->
+<!-- ─── Core Values Section ─────────────────────────────────────────────── -->
 <section class="values-section">
   <div class="container">
-    <!-- Section Header -->
     <div class="section-header">
-      <span class="sub-title">WHAT WE STAND FOR</span>
+      <span class="sub-title">What We Stand For</span>
       <h2>Our Core <span>Values</span></h2>
       <p class="description">
         Every placement, every partnership, and every interaction is guided by the principles that
@@ -101,7 +100,6 @@
       </p>
     </div>
 
-    <!-- Value Cards (same as feature-card grid) -->
     <div class="row g-4">
       @for (value of coreValues; track value.title) {
         <div class="col-md-6 col-lg-3">
@@ -118,12 +116,11 @@
   </div>
 </section>
 
-<!-- ─── History Section (mirrors Services Section with timeline cards) ─────── -->
+<!-- ─── History Section ─────────────────────────────────────────────────── -->
 <section class="history-section">
   <div class="container">
-    <!-- Section Header -->
     <div class="section-header">
-      <span class="sub-title">OUR JOURNEY</span>
+      <span class="sub-title">Our Journey</span>
       <h2>25 Years of <span>Excellence</span></h2>
       <p class="description">
         From a single-sector startup in Dhaka to one of Bangladesh's most recognized international
@@ -132,16 +129,14 @@
       </p>
     </div>
 
-    <!-- Timeline Cards Grid (same grid as service-card) -->
     <div class="row g-4">
       @for (milestone of milestones; track milestone.year) {
         <div class="col-md-6 col-lg-4">
-          <div class="service-card milestone-card">
+          <div class="milestone-card">
             <div class="card-image">
               <div class="milestone-image-bg">
                 <span class="milestone-year-display">{{ milestone.year }}</span>
               </div>
-              <div class="card-image-overlay"></div>
               <div class="card-icon-badge">
                 <i [class]="milestone.icon"></i>
               </div>
@@ -152,7 +147,7 @@
               <p class="card-text">{{ milestone.description }}</p>
             </div>
             <div class="card-overlay">
-              <span class="learn-more">Our Story →</span>
+              <span class="learn-more">Our Story &rarr;</span>
             </div>
           </div>
         </div>
@@ -161,7 +156,7 @@
   </div>
 </section>
 
-<!-- ─── CTA Section ────────────────────────────────────────────────────────── -->
+<!-- ─── CTA Section ──────────────────────────────────────────────────────── -->
 <section class="cta-section d-flex align-items-center">
   <div class="cta-overlay"></div>
   <div class="container position-relative cta-content text-center">

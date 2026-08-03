@@ -1,20 +1,17 @@
-<!-- ─── Hero Section ──────────────────────────────────────────────────────── -->
 <section class="hero-section d-flex align-items-center">
   <div class="hero-overlay"></div>
-  <div class="container position-relative hero-content">
+  <div class="container position-relative hero-content text-center">
     <span class="hero-badge">Our Partners</span>
     <h1 class="hero-title">Our Clients</h1>
-    <p class="hero-subtitle">
+    <p class="hero-subtitle mx-auto">
       Trusted by leading organizations across the Kingdom of Saudi Arabia — from construction giants
       and medical institutions to global hospitality brands.
     </p>
   </div>
 </section>
 
-<!-- ─── Testimonials Section ─────────────────────────────────────────────────── -->
 <section class="testimonials-section">
   <div class="container">
-    <!-- Breadcrumb -->
     <nav aria-label="Breadcrumb">
       <ol class="breadcrumb clients-breadcrumb">
         <li class="breadcrumb-item"><a href="/">Jalal Overseas International</a></li>
@@ -22,9 +19,8 @@
       </ol>
     </nav>
 
-    <!-- Section Header -->
     <div class="section-header">
-      <span class="sub-title">WHAT THEY SAY</span>
+      <span class="sub-title">What They Say</span>
       <h2>Testimonials from Our <span>Satisfied Clients</span></h2>
       <p class="description">
         Our clients' success is our greatest achievement. Here's what industry leaders across Saudi
@@ -32,20 +28,16 @@
       </p>
     </div>
 
-    <!-- Testimonial Slider -->
     <div class="testimonial-wrapper">
       <div class="testimonial-card">
-        <!-- Quote Icon -->
         <div class="quote-icon">
           <i class="fas fa-quote-left"></i>
         </div>
 
-        <!-- Quote Text -->
         <blockquote class="testimonial-quote">
           "{{ testimonials[activeTestimonial()].quote }}"
         </blockquote>
 
-        <!-- Author -->
         <div class="testimonial-author">
           <img
             [src]="testimonials[activeTestimonial()].avatar"
@@ -64,7 +56,6 @@
         </div>
       </div>
 
-      <!-- Navigation -->
       <div class="testimonial-nav">
         <button
           class="nav-arrow nav-prev"
@@ -97,12 +88,10 @@
   </div>
 </section>
 
-<!-- ─── Clients Logo Grid Section ────────────────────────────────────────────── -->
 <section class="clients-section">
   <div class="container">
-    <!-- Section Header -->
     <div class="section-header">
-      <span class="sub-title">TRUSTED BY</span>
+      <span class="sub-title">Trusted By</span>
       <h2>Companies That <span>Trust Us</span></h2>
       <p class="description">
         Our clients are our most treasured assets. We nurture every relationship with commitment,
@@ -111,7 +100,6 @@
       </p>
     </div>
 
-    <!-- Filter Tabs -->
     <div class="filter-tabs">
       @for (cat of filterCategories; track cat) {
         <button
@@ -124,7 +112,6 @@
       }
     </div>
 
-    <!-- Logo Grid -->
     <div class="logo-grid">
       @for (client of filteredClients; track client.name) {
         <div class="logo-card">
@@ -137,18 +124,16 @@
       }
     </div>
 
-    <!-- Client Count -->
     <div class="clients-count-bar">
       <span class="count-label">
         <i class="fas fa-check-circle me-2"></i>
-        Showing &nbsp; <strong> {{ filteredClients.length }}</strong
-        >&nbsp; of <strong> &nbsp; {{ clients.length }}+</strong>&nbsp; trusted partners
+        Showing &nbsp; <strong>{{ filteredClients.length }}</strong
+        >&nbsp; of <strong>&nbsp; {{ clients.length }}+</strong>&nbsp; trusted partners
       </span>
     </div>
   </div>
 </section>
 
-<!-- ─── CTA Section ────────────────────────────────────────────────────────── -->
 <section class="cta-section d-flex align-items-center">
   <div class="cta-overlay"></div>
   <div class="container position-relative cta-content text-center">
