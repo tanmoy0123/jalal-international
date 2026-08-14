@@ -67,7 +67,7 @@ export class About {
       year: '1998',
       title: 'Founded in Dhaka',
       description:
-        'Jalal Overseas International was established with a vision to connect skilled Bangladeshi workers with opportunities in the Middle East.',
+        'Jalal International Overseas was established with a vision to connect skilled Bangladeshi workers with opportunities in the Middle East.',
       icon: 'fas fa-flag',
     },
     {

@@ -44,7 +44,7 @@ export class Clients {
   readonly testimonials: Testimonial[] = [
     {
       quote:
-        'Jalal Overseas International has helped us recruit skilled professionals in the engineering and hospitality industries. Their team is very responsive and always provides us with high-quality candidates that meet our specific requirements. We appreciate their personalized approach to recruitment and their commitment to providing quality services.',
+        'Jalal International Overseas has helped us recruit skilled professionals in the engineering and hospitality industries. Their team is very responsive and always provides us with high-quality candidates that meet our specific requirements. We appreciate their personalized approach to recruitment and their commitment to providing quality services.',
       name: 'Ahmed Al-Rashidi',
       role: 'HR Director',
       company: 'Saudi Medical System',
@@ -53,7 +53,7 @@ export class Clients {
     },
     {
       quote:
-        'We have been partnering with Jalal Overseas International for over 8 years. Their understanding of our industry requirements and their ability to source skilled Bangladeshi talent for our construction projects has been outstanding. They are a truly reliable partner.',
+        'We have been partnering with Jalal International Overseas for over 8 years. Their understanding of our industry requirements and their ability to source skilled Bangladeshi talent for our construction projects has been outstanding. They are a truly reliable partner.',
       name: 'Khalid Al-Mansouri',
       role: 'Operations Manager',
       company: 'Saudi Tools Contracting Company',
@@ -62,7 +62,7 @@ export class Clients {
     },
     {
       quote:
-        'The quality of candidates sourced through Jalal Overseas International is consistently exceptional. Their thorough screening process saves us time and ensures we get professionals who are ready to contribute from day one. Highly recommended.',
+        'The quality of candidates sourced through Jalal International Overseas is consistently exceptional. Their thorough screening process saves us time and ensures we get professionals who are ready to contribute from day one. Highly recommended.',
       name: 'Fatima Al-Zahrani',
       role: 'General Manager',
       company: 'Millennium Hotels & Resorts',
