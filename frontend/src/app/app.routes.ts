@@ -10,7 +10,7 @@ import { Media } from './component/local/media/media';
 
 export const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: Home,
     title: 'Home',
   },
@@ -44,12 +44,6 @@ export const routes: Routes = [
     component: Contact,
     title: 'Contact',
   },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
-
   {
     path: '**',
     component: NotFound,
