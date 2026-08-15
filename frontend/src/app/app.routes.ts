@@ -44,6 +44,7 @@ export const routes: Routes = [
     component: Contact,
     title: 'Contact',
   },
+
   {
     path: '**',
     component: NotFound,
